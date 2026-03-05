@@ -1,0 +1,21 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "upload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/multipart": "^9.4.0",
+    "@fastify/static": "^9.0.0",
+    "fastify": "^5.7.4",
+    "fastify-plugin": "^5.1.0",
+    "form-auto-content": "^3.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
