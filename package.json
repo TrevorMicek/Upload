@@ -8,7 +8,7 @@
   "main": "upload.js",
   "scripts": {
     "start": "nodemon src/main",
-    "build": "yarn run build",
+    "build": "yarn install",
     "test": "yarn run test",
     "eject": "yarn run eject"
   },
