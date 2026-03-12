@@ -70,8 +70,8 @@ fastify.post("/upload", function (request, reply) {
   upload(request, reply);
   console.log("upload complete");
 });
-
-fastify.listen({ port: "0.0.0.0" }, function (err, address) {
+const PORT = process.env.PORT || 3000;
+fastify.listen({ port: PORT }, function (err, address) {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
