@@ -7,7 +7,7 @@
   "type": "module",
   "main": "upload.js",
   "scripts": {
-    "start": "yarn run start",
+    "start": "nodemon src/main",
     "build": "yarn run build",
     "test": "yarn run test",
     "eject": "yarn run eject"
