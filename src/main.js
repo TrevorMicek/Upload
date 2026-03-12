@@ -28,6 +28,11 @@ fastify.register(staticFiles, {
   prefix: "/data/files/",
   decorateReply: false,
 });
+fastify.register(staticFiles, {
+  root: path.join(dirname, "./dist"),
+  prefix: "/",
+  decorateReply: false,
+});
 fastify.get("/data/:type", function (request, reply) {
   const { type } = request.params;
   fs.readdir(path.join(dirname, `data/${type}`), (err, files) => {
