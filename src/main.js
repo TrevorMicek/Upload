@@ -20,11 +20,17 @@ fastify.register(cors, {
 });
 const dirname = import.meta.dirname;
 fastify.register(staticFiles, {
-  root: path.join(dirname, "./data"),
-  prefix: "/data/",
+  root: path.join(dirname, "./data/images"),
+  prefix: "/data/images/",
 });
-fastify.get("/data", function (request, reply) {
-  fs.readdir(path.join(dirname, "data"), (err, files) => {
+fastify.register(staticFiles, {
+  root: path.join(dirname, "./data"),
+  prefix: "/data/files/",
+  decorateReply: false,
+});
+fastify.get("/data/:type", function (request, reply) {
+  const { type } = request.params;
+  fs.readdir(path.join(dirname, `data/${type}`), (err, files) => {
     if (err) {
       console.error(err);
     } else {
@@ -35,15 +41,17 @@ fastify.get("/data", function (request, reply) {
 
   console.log("data sent");
 });
-fastify.post("/data/:fileName", function (request, reply) {
+fastify.post("/data/:folder/:fileName", function (request, reply) {
   console.log("deleting");
   if (!reply.status(200)) {
     console.log("error");
   } else {
     reply.status(200);
     console.log("delete");
-    const { fileName } = request.params;
-    fs.unlink(`./src/data/${fileName}`, (err) => {
+
+    const { folder, fileName } = request.params;
+    console.log(folder);
+    fs.unlink(`./src/data/${folder}/${fileName}`, (err) => {
       if (err) {
         console.error(err);
         return;
