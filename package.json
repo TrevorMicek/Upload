@@ -7,10 +7,10 @@
   "type": "module",
   "main": "upload.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "yarn run start",
+    "build": "yarn run build",
+    "test": "yarn run test",
+    "eject": "yarn run eject"
   },
   "dependencies": {
     "@fastify/cors": "^11.2.0",
