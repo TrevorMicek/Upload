@@ -17,7 +17,7 @@ fastify.register(multipart, {
 fastify.register(cors, {
   origin: "https://uploadfe.webdevtrevor.workers.dev",
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "application/json"],
+  allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"],
   preflight: true,
 });
 const dirname = import.meta.dirname;
