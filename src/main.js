@@ -15,7 +15,7 @@ fastify.register(multipart, {
   },
 });
 fastify.register(cors, {
-  origin: "https://uploadfe.webdevtrevor.workers.dev/",
+  origin: "https://uploadfe.webdevtrevor.workers.dev",
   methods: ["GET", "POST", "PUT", "DELETE"],
 });
 const dirname = import.meta.dirname;
