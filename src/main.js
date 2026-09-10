@@ -15,7 +15,10 @@ fastify.register(multipart, {
   },
 });
 fastify.register(cors, {
-  origin: "https://uploadfe.webdevtrevor.workers.dev",
+  origin: [
+    "http://localhost:4321",
+    "https://uploadfe.webdevtrevor.workers.dev",
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"],
   preflight: true,
