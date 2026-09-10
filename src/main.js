@@ -15,8 +15,9 @@ fastify.register(multipart, {
   },
 });
 fastify.register(cors, {
-  origin: "upload-pn3q.onrcender.com",
+  origin: "https://uploadfe.webdevtrevor.workers.dev",
   methods: ["GET", "POST", "PUT", "DELETE"],
+  preflight: true,
 });
 const dirname = import.meta.dirname;
 fastify.register(staticFiles, {
