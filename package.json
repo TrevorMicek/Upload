@@ -10,7 +10,8 @@
     "start": "nodemon src/main",
     "build": "yarn install",
     "test": "yarn run test",
-    "eject": "yarn run eject"
+    "eject": "yarn run eject",
+    "dev": "nodemon src/main"
   },
   "dependencies": {
     "@fastify/cors": "^11.2.0",
